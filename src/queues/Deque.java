@@ -1,7 +1,6 @@
 package queues;
 
 import java.util.Iterator;
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 public class Deque<Type> implements Iterable<Type>{
@@ -76,7 +75,7 @@ public class Deque<Type> implements Iterable<Type>{
 
     public Iterator<Type> iterator(){
         return new Iterator<>() {
-            private Node current = first;
+            Node current = first;
 
             @Override
             public boolean hasNext() {
@@ -96,8 +95,8 @@ public class Deque<Type> implements Iterable<Type>{
     public static void main(String[] args) {
         Deque<Character> deque = new Deque<>();
 
-//        char[] chars = "abcdefg".toCharArray();
-        char[] chars = {'a', 'b'};
+        char[] chars = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+//        char[] chars = {'a', 'b'};
 
         for (char c : chars) deque.addLast(c);
 
